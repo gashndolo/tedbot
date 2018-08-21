@@ -1,0 +1,76 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'tedbot/style.css' %}" />
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% load static %}
+	<script src="{% static 'tedbot/Chart.js' %}"></script>
+</head>
+<body>
+	<div id="header">
+		<div id="logo">
+			<h1>Elimu University</h1>
+		</div>
+		<div id="nav">
+			<ul>
+				<li><a href="#">Our Founders</a></li>
+				<li><a href="#">New programs</a></li>
+			</ul>
+		</div>
+	</div> 
+
+ 
+ 	<div id="elimuwebcontentsp">
+		<!--<h3>Courses enquired about</h3>--> 
+		<div id="float1">
+			<div id="enquired1">
+				<div id="number">{{ query_tally }}</div> 
+				<div id="accompany">The highest tally for a sinlge response given by Tedbot has been about {{ query_about }}. It's been returned to the user {{ query_tally}} times</div>
+			</div>
+			<div id="enquired2">
+				<div id="number">{{ total_query }}</div> 
+				<div id="accompany">The total number of chat messages sent to Tedbot {{ total_query }}</div>
+			</div>
+		</div>
+		<div id="float1">
+			<div id="enquired1">
+				<div id="number">{{ total_tour }}</div> 
+				<div id="accompany">Tedbot has helped schedule {{ total_tour }} tours for prospective students </div>
+			</div>
+			<div id="enquired2">
+				<div id="number">{{ total_help }}</div>
+				<div id="accompany">A total of {{ total_help }} students coud not get the information they wanted from Tedbot and emailed student services</div>
+			</div>
+		</div>
+		<div id="enquired1">
+			<div id="number">{{ course_tally }}</div>
+			<div id="accompany">The most enquired about course is {{ course_enquired }} at {{ course_tally }} times.The total number of course enquiries has been {{ total_course }}</div>
+		</div>
+		</canvas><canvas id="myChart"></canvas>
+		<script type="text/javascript">
+			var ctx = document.getElementById('myChart').getContext('2d');
+			var myChart = new Chart(ctx, {type: 'bar', data: {labels: ['Admissions', 'Class schedule', 'Application', 'Chat', 'Entry Requirements', 'Deferred Studies', 'Residence', 'Tour', 'School Fees', 'Financial Aid', 'Sports'],
+																datasets: [{label: 'Message breakdown',
+																			data: ["{{ total_admission }}", "{{ total_schedule }}", "{{ total_application }}", "{{ total_chat }}", "{{total_entry }}", "{{ total_defer }}", "{{ total_residence }}", "{ total_tours }}", "{{ total_fees }}", "{{ total_aid }}", "{{ total_sports }}"],
+																			backgroundColor: "rgba(59, 89, 152,0.7)"}]}});
+		</script>
+		<!--
+		<P>Admissions {{ total_admission }} </P> 
+		<p>Class schedule {{ total_schedule }}</p>
+		<p>Application {{ total_application }}</p>
+		<p>Chat {{ total_chat }}</p>
+		<p>Entry Requirements {{total_entry }}</p>
+		<p>Deferred Studies {{ total_defer }}</p>
+		<p>Residence {{ total_residence }}</p>
+		<p>Tour {{ total_tours }}</p>
+		<p>School Fees {{ total_fees }}</p>
+		<p>Financial Aid {{ total_aid }}</p>
+		<p>Sports {{ total_sports }}</p>
+		<div>-->
+		
+
+			<a href="{% url 'index' %}">Tedbot</a>
+	</div>
+</body>
+</html>    

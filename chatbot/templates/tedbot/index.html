@@ -1,0 +1,77 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'tedbot/style.css' %}" />
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+	<title></title>
+	<script type="text/javascript">
+		function moveWin()
+		{ window.scroll(0, 10000);
+			setTimeout('moveWin();', 10)} 
+	</script>-->
+</head>
+<body onLoad="moveWin();">
+	<div id="header">
+		<div id="logo">
+			<h1>Elimu University</h1>
+		</div>
+		<div id="nav">
+			<ul>
+				{% if user.is_authenticated %}
+				<li><a href="#">{{ user.username }}</a></li> 
+				<li><a href="{% url 'logout' %}">Log out</a></li>
+				{% else %}
+				<li><a href="{% url 'login' %}">Log in</a></li>
+				<li><a href="{% url 'signup' %}">Signup</a></li>
+				{% endif %}
+			</ul>
+		</div>
+	</div> 
+	 
+	<div id="contain">
+	<div id="containheader">
+		<h2>Hello, I'm Tedbot</h2>
+	</div>
+		<div id="chat">
+
+			{% for text in thread %}
+				{% if forloop.counter0|divisibleby:2 %}
+				<div align="left">
+				<p id = "bot"> <span>{{ text|safe }}</span> </p> 
+				</div>
+				{% else %}
+				<div align="right">
+				<p id = "user"> {{ text }} </p> 
+				</div>
+				{% endif %}
+			{% endfor %} 
+		</div>
+	<div id="bottom">
+		<form name='form' action="{% url 'index' %}" method="POST"> {% csrf_token %}
+			<input type="text" name="question" placeholder="Type your message here" /> 
+			<input type="submit" name="send" value="send">
+		</form>
+	</div> 
+	</div>
+	<div id="tedbot">
+		<div id="tedbotheader"><h3>Let me help you out</h3></div>
+		<div id="tedbotbody">
+			<p>I am tedbot, an artificial intelligence bot designed to help you join Elimu university and navigate the campus. I am a bot so keep your sentences short and straight to the point.</p>
+			<p>For example I would prefer</p>
+			<p>"When is the application deadline"</p>
+			<p>instead of</p>
+			<p>"I came here this fine morning to discover for whence the time limit for applying to join this fine institution shall like the steam from the beatiful hot springs of Lake Bogoria evaporate."</p>
+			<p>I hope I'll be helpful.</p>
+		</div>
+	</div>
+	<!--
+	{{ ID }}
+	{{ state }}
+	{{ score }}-->
+	<div id="footer">
+		<a href="{% url 'chatanalytics' %}">view chat analytics</a>
+		<a href="{% url 'admin:index' %}">admin login</a>
+	</div>
+</body>
+</html>  

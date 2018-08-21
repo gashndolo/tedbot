@@ -1,0 +1,164 @@
+body {
+	padding: 0px;
+	margin: 0px;
+	font-family: "Helvetica";
+}
+/*  ============================================== */
+#header {
+    background-color: #3b5998;
+    height: 80px;
+    padding: 10px;
+    opacity: 0.7;
+}
+#footer {
+	background-color: #3b5998;
+    height: 40px;
+    padding: 10px;
+    opacity: 0.7;
+    
+    position: relative;
+    width: 800px;
+    z-index: 3;
+}
+#logo {
+    color: #ffffff;
+    padding-left: 60px;
+    font-family: ‘Lucida Console’, Monaco, monospace;
+    font-size: 20px;
+}
+#nav, #logo {
+    float: left;
+}
+#nav {
+    float:right;
+    margin-top: 10px;
+}
+ul li { 
+    float: left;
+    list-style-type: none;
+    
+}
+a {
+    padding: 5px 10px;
+    text-decoration: none;
+    margin: 12px;
+    color: #000000; 
+    font-size: 16px;
+    border-radius: 7px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+a:hover {
+     background-color: red;
+     opacity: 0.4;
+     color: #FFFFFF;
+     transition: background-color 0.3s ease-in-out;
+     transition: color 0.3s ease-in-out;
+}
+/*  ============================================== */
+/* ========================analytics ==================*/
+#float1 {
+	display: flex;
+}
+#enquired1 {
+  display: flex;
+  height: 200px;
+  flex: 0 0 55%;
+}
+#enquired2 {
+  display: flex;
+  height: 200px;
+  flex: 1;
+}
+#number {
+  flex: 0 0 25%;
+  font-size: 90px;
+  color: #3b5998;
+
+}
+#accompany {
+  flex: 1;
+  vertical-align: middle;
+  height: 200px;
+  padding-top: 30px;
+  padding-left: 40px;
+}
+
+/*	=======================================================*/
+#registration {
+	padding-left: 250px;
+	padding-top: 90px;
+	width: 700px;
+}
+#elimuwebcontent {
+	padding-left: 250px;
+	margin-top: 20px;
+	width: 553px;
+} 
+#elimuwebcontentsp {
+	padding-left: 170px;
+	margin-top: 20px;
+	width: 893px;
+} 
+#contain {
+	padding-left: 250px;
+	margin-top: 20px;
+} 
+#containheader {
+	background-color: #3b5998;
+	width: 553px;
+	padding-top: 10px;
+	padding-left: 10px;
+	height: 60px;
+	color: #ffffff;
+}
+#chat {
+	width: 500px;
+	padding: 30px;
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+	background-color: #ffffff;
+	/*border: 1px solid;*/
+}
+#bot {
+	font-family: "Helvetica";
+	width: 300px;
+	padding: 20px;
+	border: 1px solid #3b5998;
+	border-radius: 15px;
+	background-color: #ffffff;
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, .2); 
+}
+#user {
+	font-family: "Helvetica";
+	width: 200px;
+	padding: 20px;
+	border: 1px solid #ffffff;
+	border-radius: 15px;
+	color: #ffffff;
+	background-color: #3b5998;
+	/*background-color: #3232ff;*/
+} 
+#tedbot {
+	width: 400px;
+	height: 400px;
+	position: fixed;
+	top: 120px;
+	right: 80px;
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+	z-index: -1;
+}
+#tedbotheader {
+	height: 50px;
+	background-color: #3b5998;
+	padding: 10px;
+	color: #ffffff;
+}
+#tedbotbody {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+input[type=text] { 
+	width: 495px;
+	margin-top: 30px;
+	padding: 10px 10px;
+}

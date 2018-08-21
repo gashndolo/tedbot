@@ -1,0 +1,30 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'tedbot/style.css' %}" />
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div id="header">
+		<div id="logo">
+			<h1>Elimu University</h1>
+		</div>
+		<div id="nav">
+			<ul> 
+				<li><a href="#">Our Founders</a></li>
+				<li><a href="#">About the school</a></li>
+			</ul>
+		</div>
+	</div> 
+
+	<div id="registration">
+		<h2>Sign up</h2>
+		<form method="post"> {% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit">Sign up</button>
+		</form>
+	</div>
+</body>
+</html> 

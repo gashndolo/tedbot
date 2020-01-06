@@ -15,7 +15,7 @@ from tedbot.models import Question, Answer, Course, Tour, Mail, Admission, Unabl
 
 from random import *
 
-from wordsegment import load, segment
+#from wordsegment import load, segment
 from nltk.corpus import stopwords
 from nltk import word_tokenize
 import nltk, string, os, re 
